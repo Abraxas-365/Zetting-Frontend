@@ -20,10 +20,11 @@ const NotificationScreen = () => {
                 <View style={{ ...styleWrappers.wrapperTitles }}>
                     <Text style={{ ...styleTitles.titleTextLight }}>NOTIFICATION</Text>
                 </View>
-                <Text style={{ ...styleText.notificationsNum }}>You have n notifications today</Text>
+                <Text style={{ ...styleText.notificationsNum }}>You have {notifications.length} notifications today</Text>
             </View>
 
-            <FlatList contentContainerStyle={{ flexGrow: 1, top: '3%', ...styleWrappers.wrapperHorizontalGap }} data={notifications} renderItem={({ item }: any) => <NotificationCard notification={item} />} />
+            <FlatList contentContainerStyle={{ flexGrow: 1, top: '3%', ...styleWrappers.wrapperHorizontalGap }} data={notifications}
+                renderItem={({ item }: any) => <NotificationCard notification={item} />} />
         </SafeAreaView>
     );
 };

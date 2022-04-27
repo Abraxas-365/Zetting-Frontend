@@ -36,6 +36,7 @@ export interface Profession {
 export interface Project {
     id?: string;
     name: string;
+    image?: string;
     description?: string;
     workers?: Array<string>;
     color?: string;
@@ -59,20 +60,19 @@ export interface Features {
 
 export interface WorkRequest {
     id?: string;
-    owner_id?: string;
-    project_id?: string;
-    worker_id?: string;
+    owner?: User;
+    project?: Project;
+    worker?: User;
     acepted?: string;
     created_at?: string;
     updated_at?: string
 }
 
 export interface Notification {
-    notified_id?: string;
-    notifier_image?: string;
-    notifier_id?: string;
+    notified?: User;
+    notifier?: User;
     type?: string
-    reference_id?: string;
+    workRequest?: WorkRequest
     is_read?: string
     message?: string
     created_at?: string

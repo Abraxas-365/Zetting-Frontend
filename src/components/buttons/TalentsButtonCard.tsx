@@ -3,24 +3,23 @@ import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { User } from '../../interfaces/appInterfaces';
+import { Project, User } from '../../interfaces/appInterfaces';
 import { serveDefaultImages } from '../../api/apiCalls';
 import { RootStackParamList } from '../../navigator/StackNavigator';
 
 type Props = {
     user?: User
-    pid?: string
+    project?: Project
     color?: string
 }
 
-const TalentsButtonCard = ({ user = {}, color = '#FF7F39', pid }: Props) => {
-    console.log('talets button pid', pid);
+const TalentsButtonCard = ({ user = {}, color = '#FF7F39', project }: Props) => {
     const defaultPic = serveDefaultImages + "noPerfil.png"
 
     let perfilImage = user.perfil_image == null ? defaultPic : serveDefaultImages + user.perfil_image
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
     return (
-        <TouchableOpacity style={{ ...styles.boton, backgroundColor: color }} onPress={() => navigation.navigate('WorkerActorScreen', { user, pid })}>
+        <TouchableOpacity style={{ ...styles.boton, backgroundColor: color }} onPress={() => navigation.navigate('WorkerActorScreen', { user, project })}>
             <View style={styles.wrapper}>
                 <View style={{ ...styles.viewLeft, overflow: 'hidden' }}>
                     <Image style={{ flex: 1, overflow: 'hidden', borderTopLeftRadius: 9, borderBottomLeftRadius: 9 }} source={{ uri: perfilImage }} />

@@ -52,8 +52,7 @@ const CategoriesBotton = ({ onPress = () => { }, text = 'test', image = serveDef
 
 interface Props extends StackScreenProps<RootStackParamList, 'BuildTeamScreen'> { }
 const BuildTeamScreen = ({ route }: Props) => {
-    const pid = route.params.data.pid
-    console.log('el pid: ' + pid)
+    const project = route.params.data
 
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
     return (
@@ -70,7 +69,7 @@ const BuildTeamScreen = ({ route }: Props) => {
                     <View>
                         <View style={{ flexDirection: 'row', marginTop: 20, position: 'relative' }}>
                             <View style={{ position: 'relative', left: 0, }}>
-                                <CategoriesBotton text='ACTORS' onPress={() => { navigation.navigate('ActorsScreen', { pid }) }} image={serveDefaultImages + "/actorButtons.jpeg"} />
+                                <CategoriesBotton text='ACTORS' onPress={() => { navigation.navigate('ActorsScreen', { project }) }} image={serveDefaultImages + "/actorButtons.jpeg"} />
                             </View>
                             <View style={{ position: 'absolute', right: 0 }}>
                                 <CategoriesBotton image={serveDefaultImages + "/productorButtons.jpeg"} text="PRODUCTOR" />

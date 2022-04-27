@@ -10,7 +10,7 @@ import BlackInfoBottons from '../../components/perfilComponets/BlackInfoBottons'
 import FeaturesBox from '../../components/perfilComponets/FeaturesBox';
 import { AuthContext } from '../../context/AuthContext';
 import { sendWorkRequest } from '../../hooks/useSendWorkRequest';
-import { User } from '../../interfaces/appInterfaces';
+import { Project, User } from '../../interfaces/appInterfaces';
 import { RootStackParamList } from '../../navigator/StackNavigator';
 import { styleBackgrounds } from '../../themes/Backgrounds';
 
@@ -18,20 +18,21 @@ import { styleBackgrounds } from '../../themes/Backgrounds';
 
 
 type PropsScroll = {
-    user?: User
-    pid?: string
+    worker?: User
+    project?: Project
 
 }
-const SystretchyScrollView = ({ user = {}, pid }: PropsScroll) => {
+const SystretchyScrollView = ({ worker = {}, project }: PropsScroll) => {
 
     const { token } = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
-    let price = user!.profession!.price == null ? "_" : "S/" + user!.profession!.price
-    let tamano = user!.features!.height == null ? "-" : user!.features!.height
-    let age = user!.features!.age == null ? "-" : user!.features!.age
-    let gender = user!.features!.gender == null ? "alien" : user!.features!.gender
-    let foto = user!.perfil_image == null ? serveDefaultImages + "noPerfil.png" : serveDefaultImages + user!.perfil_image
-    let description = user!.profession!.description == null ? "si no sabes donde ir no puedes estar perdido" : user!.profession!.description
+    let price = worker!.profession!.price == null ? "_" : "S/" + worker!.profession!.price
+    let tamano = worker!.features!.height == null ? "-" : worker!.features!.height
+    let age = worker!.features!.age == null ? "-" : worker!.features!.age
+    let gender = worker!.features!.gender == null ? "alien" : worker!.features!.gender
+    let foto = worker!.perfil_image == null ? serveDefaultImages + "noPerfil.png" : serveDefaultImages + worker!.perfil_image
+    let description = worker!.profession!.description == null ? "si no sabes donde ir no puedes estar perdido" : worker!.profession!.description
     return (
         <StretchyScrollView
             image={{ uri: foto }}
@@ -40,11 +41,11 @@ const SystretchyScrollView = ({ user = {}, pid }: PropsScroll) => {
                 <View style={styleViews.wrapper}>
                     <View style={styleViews.nameAndPerfil}>
                         <View style={styleViews.nameAndProfession}>
-                            <Text style={styleText.name}>{user.name}</Text>
+                            <Text style={styleText.name}>{worker.name}</Text>
                             <Text style={styleText.professions}>Actor</Text>
                         </View>
                         <View style={styleViews.addButton}>
-                            <CustomAdjustableBotton color="#FE893C" borderWidth={0} text="Add" onPress={() => sendWorkRequest(user.id, pid, navigation, token)} />
+                            <CustomAdjustableBotton color="#FE893C" borderWidth={0} text="Add" onPress={() => sendWorkRequest(user, worker, project, navigation, token)} />
                         </View>
                     </View>
                     <View style={styleViews.infoBoxes}>
@@ -78,7 +79,7 @@ const WorkerActorScreen = ({ route }: Props) => {
 
     return (
         <View style={styleBackgrounds.fondoDark}>
-            <SystretchyScrollView user={route.params.user} pid={route.params.pid} />
+            <SystretchyScrollView worker={route.params.user} project={route.params.project} />
         </View>
     );
 };

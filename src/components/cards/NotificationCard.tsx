@@ -5,7 +5,6 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { DebugInstructions } from 'react-native/Libraries/NewAppScreen';
 import { serveDefaultImages } from '../../api/apiCalls';
 import { useGetWorkRequest } from '../../hooks/useGetWorkRequest';
-import { useBuildNotification } from '../../hooks/useNotifications';
 import { useGetProjectById } from '../../hooks/useProjects';
 import { useUser } from '../../hooks/useUser';
 import { Notification, Project } from '../../interfaces/appInterfaces';
@@ -17,19 +16,18 @@ type Props = {
 }
 
 const NotificationCard = ({ notification }: Props) => {
-    const { project, user, workRequest } = useBuildNotification(notification)
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
     const defaultPic = serveDefaultImages + "noPerfil.png"
-    let perfilImage = user.perfil_image == null ? defaultPic : serveDefaultImages + user.perfil_image
+    let perfilImage = notification.notifier!.perfil_image == null ? defaultPic : serveDefaultImages + notification.notifier!.perfil_image
 
     const TypeMessage = () => {
         switch (notification.type) {
-            case "new-work-request":
+            case "workrequest":
                 return (
                     <View style={container.textContainer}>
-                        <Text style={text.nameText}>{user.name}</Text>
-                        <Text style={text.projectName}>{project.name}</Text>
-                        <Text style={text.massagesText}>{notification.message} {user.name}</Text>
+                        <Text style={text.nameText}>{notification.notifier!.name}</Text>
+                        <Text style={text.projectName}>{notification.workRequest!.project!.name}</Text>
+                        <Text style={text.massagesText}>{notification.message} {notification.notifier!.name}</Text>
                     </View>
                 )
             default:

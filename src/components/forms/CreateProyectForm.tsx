@@ -26,6 +26,7 @@ const CreateProjectForm = () => {
     })
 
     var project: Project = {
+        //TODO: put image
         name: name,
         description: description,
         // collaboration: collaboration,

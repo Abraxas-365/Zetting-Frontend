@@ -14,7 +14,7 @@ export const useTalents = (profession: string) => {
         headers: { Authorization: `Bearer ${token}` }
     };
     const getTalets = async () => {
-        const { data } = await apiCalls.get('/api/users/profession=' + profession + '/page=' + page, config)
+        const { data } = await apiCalls.get('/api/users-search/profession=' + profession + '/page=' + page, config)
         console.log(data);
         setTalents(data)
     }
@@ -22,7 +22,7 @@ export const useTalents = (profession: string) => {
     useEffect(() => {
         getTalets();
 
-    }, [])
+    }, [page])
     return { talents }
 
 }

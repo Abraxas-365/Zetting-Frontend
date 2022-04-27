@@ -32,7 +32,8 @@ const ActorsScreen = ({ route }: Props) => {
                 </View>
             </View>
 
-            <FlatList contentContainerStyle={{ ...styleWrappers.wrapperHorizontalGap }} data={talents} renderItem={({ item }: any) => <TalentsButtonCard user={item} color={item.color} pid={route.params.pid} />} />
+            <FlatList contentContainerStyle={{ ...styleWrappers.wrapperHorizontalGap }} data={talents} renderItem={({ item }: any) => <TalentsButtonCard user={item} color={item.color}
+                project={route.params.project} />} />
         </SafeAreaView>
     );
 };

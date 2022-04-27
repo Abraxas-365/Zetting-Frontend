@@ -14,11 +14,10 @@ type Props = {
 }
 
 const ProjectBotton = ({ project }: Props) => {
-    const { users } = useBuildProjectCard(project.id);
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
     const [isEnabled, setIsEnabled] = React.useState(true);
     // TODO: tell lorena to check what to do when no members
-    let usersLen = users == null ? 0 : users.length;
+    let usersLen = project.workers == null ? 0 : project.workers.length;
     return (
         <TouchableOpacity style={{ ...styles.boton, backgroundColor: project.color }} onPress={() => navigation.navigate('ProyectoScreen', { project })}>
             <View style={styles.wrapper}>
@@ -27,7 +26,7 @@ const ProjectBotton = ({ project }: Props) => {
                     <Text style={styles.membersNumber}>{usersLen} Members</Text>
 
                     <View style={styles.members}>
-                        <MembersPhotos users={users} />
+                        <MembersPhotos users={project.workers} />
                     </View>
                 </View>
                 <View style={styles.viewRight}>
@@ -56,7 +55,7 @@ const ProjectBotton = ({ project }: Props) => {
 };
 
 type MembersPhotosProps = {
-    users: Array<User>
+    users: any
 }
 const MembersPhotos = ({ users }: MembersPhotosProps) => {
     const defaultPic = serveDefaultImages + "noPerfil.png"

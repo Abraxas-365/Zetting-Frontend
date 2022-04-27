@@ -1,10 +1,9 @@
 import { CommonActions } from "@react-navigation/native";
-import { useContext } from "react";
 import { apiCalls } from "../api/apiCalls";
-import { AuthContext } from "../context/AuthContext";
-import { WorkRequest } from "../interfaces/appInterfaces";
+import { Project, User, WorkRequest } from "../interfaces/appInterfaces";
 
-export const sendWorkRequest = async (worker_id: any, project_id: any, navigation: any, token: any) => {
+export const sendWorkRequest = async (owner: User | null, worker: User, project: Project | undefined, navigation: any, token: any) => {
+
 
 
     const config = {
@@ -13,8 +12,7 @@ export const sendWorkRequest = async (worker_id: any, project_id: any, navigatio
     console.log(config);
 
     try {
-        const { data } = await apiCalls.post<WorkRequest>('/api/work-request/new', { worker_id, project_id }, config);
-        await apiCalls.post('/api/notification/new/type=new-work-request', { "notified_id": worker_id, "reference_id": data.id }, config);
+        const { data } = await apiCalls.post<WorkRequest>('/api/work-request/new', { "owner": owner, "worker": worker, "project": project }, config);
         navigation.dispatch(
             CommonActions.reset({
                 index: 0,

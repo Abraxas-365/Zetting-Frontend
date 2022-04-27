@@ -28,9 +28,9 @@ export type RootStackParamList = {
     ProyectoScreen: { project: Project | undefined };
     CreateProyectScreen: undefined;
     BuildTeamScreen: { data: any };
-    ActorsScreen: { pid: string };
+    ActorsScreen: { project: Project };
     FilterActorScreen: undefined;
-    WorkerActorScreen: { user: User, pid?: string };
+    WorkerActorScreen: { user: User, project?: Project };
     ProfileScreen: { user: User };
     EditPerfilScreen: { user: User };
 };
