@@ -4,16 +4,16 @@ import { ImageBackground, Text, TouchableOpacity, View } from 'react-native';
 import { style } from './style'
 
 type Props = {
-    uri: string
-    title: string
-    info: string
-    date: string | number
-    moth: string
+    uri?: string
+    title?: string
+    info?: string
+    date?: string | number
+    moth?: string
 }
 
 const CastingCard = ({
     uri = "https://dts.lat/blog/wp-content/uploads/2020/07/casilleros-inteligentes.jpg",
-    title = "Title lalalallaa lala",
+    title = "Title",
     info = "info",
     date = 21,
     moth = "JUN"
