@@ -17,7 +17,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+ "bundleIdentifier": "com.belleandstone.foundz"
     },
     "android": {
       "adaptiveIcon": {
