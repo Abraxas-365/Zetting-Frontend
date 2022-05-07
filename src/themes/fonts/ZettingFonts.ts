@@ -2,5 +2,6 @@
 export const FONTS = {
     mainFont: "proximaNova",
     mainFontBold: "proximaNovaBold",
-    secondaryFontBold: "addelleSansBold"
+    secondaryFontBold: "addelleSansBold",
+    secondaryFont: "addelleSans"
 }
