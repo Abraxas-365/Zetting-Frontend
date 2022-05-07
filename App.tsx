@@ -5,8 +5,7 @@ import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
 import { en, es } from './i18n/supportedLanguages';
 import useFonts from './src/functionalities/fonts/hooks/useFonts';
-import { NavigationContainer } from '@react-navigation/native';
-import SignUpStack from './src/navigation/SingUpStack'
+import MainNavigator from './src/navigation/main/mainNavigator';
 
 const App = () => {
   i18n.fallbacks = true;
@@ -27,9 +26,7 @@ const App = () => {
     );
   }
   return (
-    <NavigationContainer>
-      <SignUpStack />
-    </NavigationContainer>
+    <MainNavigator />
 
   );
 }

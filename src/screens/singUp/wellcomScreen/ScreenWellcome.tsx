@@ -3,7 +3,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import CustomButton from '../../../components/Buttons/CustomButton';
-import { RootStackParamList } from '../../../navigation/SingUpStack';
+import { RootStackParamList } from '../../../navigation/stack/SingUpStack';
 import { COLORS } from '../../../themes/colors/ZettingColors';
 import { FONTS } from '../../../themes/fonts/ZettingFonts';
 import { styleBackground, styleWrappers } from '../../../themes/styles';

@@ -1,9 +1,9 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import ScreenWellcome from '../screens/singUp/wellcomScreen/ScreenWellcome';
-import ScreenLogin from '../screens/singUp/login/ScreenLogin';
-import ScreenRegister from '../screens/singUp/register/ScreenRegister';
-import ScreenCheckEmail from '../screens/singUp/register/ScreenCheckEmail';
+import ScreenWellcome from '../../screens/singUp/wellcomScreen/ScreenWellcome';
+import ScreenLogin from '../../screens/singUp/login/ScreenLogin';
+import ScreenRegister from '../../screens/singUp/register/ScreenRegister';
+import ScreenCheckEmail from '../../screens/singUp/register/ScreenCheckEmail';
 
 const Stack = createStackNavigator();
 
