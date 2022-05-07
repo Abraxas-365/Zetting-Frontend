@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
-import { COLORS } from '../../../../../themes/colors/ZettingColors';
-import { FONTS } from '../../../../../themes/fonts/ZettingFonts';
+import { COLORS } from '../../../../../../themes/colors/ZettingColors';
+import { FONTS } from '../../../../../../themes/fonts/ZettingFonts';
 
 export const styles = StyleSheet.create({
     textInput: {

@@ -1,16 +1,22 @@
 const en = {
     Members: "Members",
     Documents: "Documents",
-    YourEmail: "Your Email",
-    Password: "Password"
+    Auth: {
+        YourEmail: "Your Email",
+        Password: "Password",
+        SignIn: "Sign In",
+    }
 
 }
 
 const es = {
     Members: "Miembros",
     Documents: "Documentos",
-    YourEmail: "Tu Email",
-    Password: "Password"
+    Auth: {
+        YourEmail: "Your Email",
+        Password: "Password",
+        SignIn: "Sign In",
+    }
 
 }
 

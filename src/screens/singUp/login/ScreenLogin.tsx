@@ -9,7 +9,7 @@ const ScreenLogin = () => {
     return (
         <SafeAreaView style={styleBackground.lightBackground}>
             <View style={styleWrappers.frameWrapper}>
-                <Text style={stylesText.titleDark}>LOG IN</Text>
+                <Text style={[stylesText.titleDark, { marginBottom: '10%' }]}>LOG IN</Text>
 
                 <LoginFormContainer />
                 <SocialMediaButtonsContainer styleContainer={{ marginTop: '20%' }} />

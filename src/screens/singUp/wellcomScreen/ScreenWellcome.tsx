@@ -27,7 +27,7 @@ const ScreenWellcome = () => {
                     styleContainer={{ marginTop: '5%', backgroundColor: COLORS.white }}
                     styleText={{ color: COLORS.black }}
                     text='Register'
-                    onPress={() => navigation.navigate('RegisterScreen')}
+                    onPress={() => navigation.navigate('CheckEmailScreen')}
                 />
             </View>
 

@@ -1,11 +1,19 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { SafeAreaView, Text, View } from 'react-native';
+import SocialMediaButtonsContainer from '../../../functionalities/auth/login/containers/buttons';
+import CheckEmailEmailForm from '../../../functionalities/auth/register/containers/forms';
+import { styleBackground, stylesText, styleWrappers } from '../../../themes/styles';
 
 const ScreenCheckEmail = () => {
     return (
-        <View>
-            <Text>Register1</Text>
-        </View>
+        <SafeAreaView style={styleBackground.lightBackground}>
+            <View style={styleWrappers.frameWrapper}>
+                <Text style={[stylesText.titleDark, { marginBottom: '10%' }]}>REGISTER</Text>
+                <CheckEmailEmailForm />
+                <SocialMediaButtonsContainer styleContainer={{ marginTop: '20%' }} />
+
+            </View>
+        </SafeAreaView>
     );
 };
 

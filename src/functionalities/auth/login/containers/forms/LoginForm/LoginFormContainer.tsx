@@ -1,12 +1,12 @@
 import I18n from 'i18n-js';
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import CustomButton from '../../../../../components/Buttons/CustomButton';
-import CustomStakeHold from '../../../../../components/Stakeholders/CustomStakeHold';
-import { COLORS } from '../../../../../themes/colors/ZettingColors';
-import { FONTS } from '../../../../../themes/fonts/ZettingFonts';
-import { useForm } from '../../../../share/hooks/useForm';
-import { UserLogin } from '../../model';
+import { View } from 'react-native';
+import CustomButton from '../../../../../../components/Buttons/CustomButton';
+import CustomStakeHold from '../../../../../../components/Stakeholders/CustomStakeHold';
+import { COLORS } from '../../../../../../themes/colors/ZettingColors';
+import { FONTS } from '../../../../../../themes/fonts/ZettingFonts';
+import { useForm } from '../../../../../share/hooks/useForm';
+import { UserLogin } from '../../../model';
 import { styles } from './style'
 
 //TODO: function to connect to the back
@@ -28,7 +28,7 @@ const LoginFormContainer = () => {
                 textInputProps={{
                     keyboardType: 'email-address',
                     onChangeText: (value) => { onChange(value, 'email') },
-                    placeholder: I18n.t("YourEmail"),
+                    placeholder: I18n.t("Auth.YourEmail"),
                     placeholderTextColor: COLORS.black,
                 }} />
 
@@ -40,18 +40,15 @@ const LoginFormContainer = () => {
                     secureTextEntry: true,
                     keyboardAppearance: 'dark',
                     onChangeText: (value) => { onChange(value, 'password') },
-                    placeholder: I18n.t("Password"),
+                    placeholder: I18n.t("Auth.Password"),
                     placeholderTextColor: COLORS.black,
                 }} />
 
             {/*submit*/}
             <CustomButton
-                text="Sign In"
+                text={I18n.t("Auth.SignIn")}
                 styleContainer={styles.submitButton}
-                styleText={{
-                    fontSize: 20,
-                    fontFamily: FONTS.mainFont
-                }}
+                styleText={styles.submitButtonText}
 
             />
 
