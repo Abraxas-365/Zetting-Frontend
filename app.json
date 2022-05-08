@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "MultiRetos",
-    "slug": "MultiRetos",
+    "name": "Zetting",
+    "slug": "Zetting",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/zetting.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",

@@ -5,6 +5,6 @@
   "minify": false,
   "urlRandomness": null,
   "https": false,
-  "scheme": "exp+multiretos",
-  "devClient": false
+  "scheme": "com.belleandstone.foundz",
+  "devClient": true
 }
