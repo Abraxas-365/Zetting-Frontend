@@ -1,6 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import ScreenNewProject from '../../screens/project/createProject/newProject/ScreenNewProject';
+import ScreenBuildTeam from '../../screens/project/createProject/buildTeam/ScreenBuildTeam';
+import ScreenSearchForActors from '../../screens/project/findArtists/serchForActors/ScreenSearchForActors';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +24,8 @@ const ProjectStack = () => {
             }}
         >
             <Stack.Screen name='NewProjectScreen' options={{ title: "NewProjectScreen" }} component={ScreenNewProject} />
+            <Stack.Screen name='BuidTeamScreen' options={{ title: "BuidTeamScreen" }} component={ScreenBuildTeam} />
+            <Stack.Screen name='SearchActors' options={{ title: "SearchActors" }} component={ScreenSearchForActors} />
         </Stack.Navigator>
     );
 };

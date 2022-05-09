@@ -11,7 +11,16 @@ const en = {
         Description: "Project Description",
         Calendar: "Calendar",
         PickColor: "Pick Color",
-        Create: "Create Project"
+        Create: "Create Project",
+        Build: "BUILD YOUR TEAM",
+        Skip: "Skip",
+        Slogan: "The Sound of Music"
+    },
+    Actor: {
+        Actor: "Actor",
+        Actors: "Actors",
+        ACTORS: "ACTORS",
+        Slogan: "The Sound of Music"
     }
 
 }
@@ -29,7 +38,10 @@ const es = {
         Description: "Project Description",
         Calendar: "Calendar",
         PickColor: "Pick Color",
-        Create: "Create Project"
+        Create: "Create Project",
+        Build: "BUILD YOUR TEAM",
+        Skip: "Skip",
+        Slogan: "Slogan"
     }
 
 }

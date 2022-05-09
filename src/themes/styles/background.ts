@@ -9,7 +9,12 @@ export const styleBackground = StyleSheet.create({
     lightBackground: {
         backgroundColor: COLORS.white,
         flex: 1
+    },
+    orangeBackground: {
+        backgroundColor: COLORS.orange,
+        flex: 1
     }
+
 })
 
 export default styleBackground;

@@ -3,6 +3,7 @@ import { COLORS } from "../../../themes/colors/ZettingColors";
 
 export const style = StyleSheet.create({
     card: {
+        backgroundColor: COLORS.orange,
         borderRadius: 11,
         height: 138,
 

@@ -7,16 +7,20 @@ type Props = {
     styles?: StyleProp<ViewStyle>
     text?: string
     uri?: string
+    onPress?: () => void
 }
 
 const JobsButton = ({
     styles,
     text = "profession",
-    uri
+    uri,
+    onPress = () => { }
 
 }: Props) => {
     return (
-        <TouchableOpacity>
+        <TouchableOpacity
+            onPress={() => { onPress(); }}
+        >
             <ImageBackground
                 style={[style.card, styles]}
                 imageStyle={{ borderRadius: 11 }}

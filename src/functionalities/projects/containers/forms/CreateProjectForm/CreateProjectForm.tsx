@@ -1,3 +1,5 @@
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import I18n from 'i18n-js';
 import React, { useState } from 'react';
 import { Button, StyleProp, StyleSheet, Text, View, ViewStyle } from 'react-native';
@@ -6,6 +8,7 @@ import CustomButton from '../../../../../components/Buttons/CustomButton';
 import CustomMultipleLineStackeHold from '../../../../../components/Stakeholders/CustomMultipleLineStackeHold/CustomMultipleLineStackeHold';
 import CustomStakeHold from '../../../../../components/Stakeholders/CustomStakeHold';
 import DateStakeHold from '../../../../../components/Stakeholders/DateStakeHold/DateStakeHold';
+import { RootStackParamListProject } from '../../../../../navigation/stack/ProjectStack';
 import { COLORS } from '../../../../../themes/colors/ZettingColors';
 import { useForm } from '../../../../share/hooks/useForm';
 import ColorPickerContainer from '../../componentsExtras/ColorPicker';
@@ -18,6 +21,7 @@ type Props = {
 const CreateProjectForm = ({
     styleWrapper
 }: Props) => {
+    const navigation = useNavigation<StackNavigationProp<RootStackParamListProject>>();
     const { ProjectName, ProjectDescription, onChange } = useForm({
         ProjectName: '',
         ProjectDescription: '',
@@ -77,6 +81,7 @@ const CreateProjectForm = ({
             />
             {/*submit*/}
             <CustomButton
+                onPress={() => navigation.navigate('BuidTeamScreen')}
                 text={I18n.t("Project.Create")}
                 styleContainer={styles.submitButton}
                 styleText={styles.submitButtonText}
