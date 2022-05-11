@@ -12,7 +12,6 @@ export const useProjects = (kind: string) => {
     };
     const getProjects = async (kind: string) => {
 
-        console.log("el TIPO", kind)
         const { data } = await apiProjects.get(`/${kind}/page=` + page, config)
         console.log(data)
         setState(data)

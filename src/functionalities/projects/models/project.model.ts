@@ -1,10 +1,10 @@
 export interface Project {
-    id: string;
+    id?: string;
     name: string;
-    owner: User;
-    workers: Array<User>;
+    owner?: User;
+    workers?: Array<User>;
     color: string;
-    image: string;
+    image?: string;
     description: string;
 }
 

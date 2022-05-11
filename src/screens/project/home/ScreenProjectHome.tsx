@@ -25,7 +25,7 @@ const ScreenProjectHome = () => {
                 </View>
 
                 {/*Body*/}
-                <ProjectsList style={{ height: '100%', marginTop: '7%' }} />
+                <ProjectsList style={{ height: "85%", marginTop: '7%' }} />
 
             </View>
         </SafeAreaView>
