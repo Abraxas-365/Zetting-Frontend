@@ -1,5 +1,3 @@
-import I18n from 'i18n-js';
-import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { styleBackground, stylesText, styleWrappers } from '../../../../themes/styles';
 import { SearchBar } from 'react-native-elements';
@@ -8,6 +6,9 @@ import CustomSearchBar from '../../../../components/SearchBar/CustomSearchBar/Cu
 import { FONTS } from '../../../../themes/fonts/ZettingFonts';
 import CustomButton from '../../../../components/Buttons/CustomButton';
 import Filter from '../../../../../assets/svg/filter.svg'
+import ActorsList from '../../../../functionalities/artists/actors/container/cads/ActorsList';
+import I18n from 'i18n-js';
+import { useState } from 'react';
 
 const ScreenSearchForActors = () => {
     const [value, setValue] = useState()
@@ -19,6 +20,8 @@ const ScreenSearchForActors = () => {
             <View style={styleWrappers.frameWrapper}>
                 <Text style={[stylesText.titleLight, { alignSelf: 'center' }]}>{I18n.t("Actor.ACTORS")}</Text>
                 <Text style={[style.slogan, { alignSelf: 'center' }]}>{I18n.t("Actor.Slogan")}</Text>
+
+
                 <CustomSearchBar
                     value={value}
                     updateSearch={updateSearch}
@@ -38,6 +41,8 @@ const ScreenSearchForActors = () => {
 
                 </CustomButton>
 
+
+                <ActorsList listStyle={{ height: '100%', marginTop: '7%' }} />
 
             </View>
 

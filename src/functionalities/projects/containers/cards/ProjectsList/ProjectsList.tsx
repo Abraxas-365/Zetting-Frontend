@@ -48,6 +48,7 @@ const ProjectsList = ({
                                 : item.workers.length + 1 > 3 ? "+" + (item.workers.length - 2).toString()
                                     : ""}
                             title={item.name}
+                            buttonText='Documents'
                             AvatarImage1={item.owner.perfil_image}
 
                         />}

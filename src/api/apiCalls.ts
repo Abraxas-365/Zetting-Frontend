@@ -6,4 +6,9 @@ export const apiProjects = axios.create({
     baseURL: baseApiURL + '/projects'
 });
 
+
+export const apiActors = axios.create({
+    baseURL: baseApiURL + '/actor'
+});
+
 export const serveDefaultImages = "http://localhost:8000/api/static/app_default_images"

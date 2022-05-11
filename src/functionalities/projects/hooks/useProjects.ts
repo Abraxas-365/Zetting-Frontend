@@ -6,7 +6,7 @@ export const useProjects = (kind: string) => {
     const [projects, setState] = useState([] as Array<Project>)
     const [page, setPageProject] = useState(1)
     const [isLoadingProjects, setIsLoading] = useState(true)
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QzQGdtYWlsLmNvbSIsImlkIjoiZmM2NTk3ZmUtOTAwMC00MzVhLWIyZjMtY2E5YTU0MzQ1NjRiIn0.UeD41PsRbOAWc7lymnux5tNbuBwSp4ePaoZqHWm3Ixg'
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3Q2QGdtYWlsLmNvbSIsImlkIjoiMjZlNDY5YWEtYmZmMi00ZmE4LWFmN2ItMDI2MzJkMDdhMTFiIn0.ZaIFf-W2AHPwU-Mi2v8D506AYQ859hEGunMrUD322ss'
     const config = {
         headers: { Authorization: `Bearer ${token}` }
     };
