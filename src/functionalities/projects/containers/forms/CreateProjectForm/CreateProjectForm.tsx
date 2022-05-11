@@ -3,7 +3,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import I18n from 'i18n-js';
 import React, { useState } from 'react';
 import { Button, StyleProp, StyleSheet, Text, View, ViewStyle } from 'react-native';
-import { StyleProps } from 'react-native-reanimated';
+import { color, StyleProps } from 'react-native-reanimated';
 import CustomButton from '../../../../../components/Buttons/CustomButton';
 import CustomMultipleLineStackeHold from '../../../../../components/Stakeholders/CustomMultipleLineStackeHold/CustomMultipleLineStackeHold';
 import CustomStakeHold from '../../../../../components/Stakeholders/CustomStakeHold';
@@ -11,6 +11,8 @@ import DateStakeHold from '../../../../../components/Stakeholders/DateStakeHold/
 import { RootStackParamListProject } from '../../../../../navigation/stack/ProjectStack';
 import { COLORS } from '../../../../../themes/colors/ZettingColors';
 import { useForm } from '../../../../share/hooks/useForm';
+import { createProject } from '../../../apiCalls/createProject';
+import { Project } from '../../../models';
 import ColorPickerContainer from '../../componentsExtras/ColorPicker';
 import { styles } from './style'
 
@@ -22,18 +24,26 @@ const CreateProjectForm = ({
     styleWrapper
 }: Props) => {
     const navigation = useNavigation<StackNavigationProp<RootStackParamListProject>>();
-    const { ProjectName, ProjectDescription, onChange } = useForm({
-        ProjectName: '',
-        ProjectDescription: '',
-
-    })
-
     const [orange, onOrange] = useState(true);
     const [yellow, onYellow] = useState(false);
     const [green, onGreen] = useState(false);
     const [blue, onBlue] = useState(false);
     const [purple, onPurple] = useState(false);
+    const [color, setColor] = useState(COLORS.orange);
     const [date, setDate] = useState(new Date())
+    const { ProjectName, ProjectDescription, onChange } = useForm({
+        ProjectName: '',
+        ProjectDescription: '',
+
+    })
+    var newProject: Project = {
+        name: ProjectName,
+        color: color,
+        description: ProjectDescription
+
+    }
+
+
     return (
         <View style={[styles.wrapper, styleWrapper]} >
             {/*ProjectName*/}
@@ -77,14 +87,23 @@ const CreateProjectForm = ({
                 onColor3={onGreen}
                 onColor4={onBlue}
                 onColor5={onPurple}
+                setColor={setColor}
 
             />
             {/*submit*/}
             <CustomButton
-                onPress={() => navigation.navigate('BuidTeamScreen')}
+                onPress={async () => {
+                    try {
+                        await createProject(newProject)
+                        navigation.navigate('BuidTeamScreen')
+                    } catch (e) {
+                        console.error(e)
+                    }
+                }}
                 text={I18n.t("Project.Create")}
                 styleContainer={styles.submitButton}
                 styleText={styles.submitButtonText}
+
 
             />
 
