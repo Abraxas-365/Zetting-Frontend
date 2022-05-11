@@ -30,9 +30,9 @@ const HeardButton = ({
             }}
         >
             {press ?
-                <HeardEmpty width={width} height={height} fill={color} />
-                :
                 <HeardFull width={17.53} height={16.03} fill={COLORS.white} />
+                :
+                <HeardEmpty width={width} height={height} fill={color} />
             }
 
         </TouchableOpacity>
